@@ -9,7 +9,6 @@ function handleModelChange(e) {
 
 function initDiagram() {
   const $ = go.GraphObject.make;
-  go.Diagram.licenseKey = "adsfewfwaefasdfdsfs";
   const diagram = $(
     go.Diagram,
 

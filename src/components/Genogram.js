@@ -406,11 +406,11 @@ function setupMarriages(diagram) {
   for (var i = 0; i < nodeDataArray.length; i++) {
     var data = nodeDataArray[i];
     var key = data.key;
-    var uxs = data.ux;
-    if (uxs !== undefined) {
-      if (typeof uxs === "number") uxs = [uxs];
-      for (var j = 0; j < uxs.length; j++) {
-        var wife = uxs[j];
+    var spouse = data.spouse;
+    if (spouse !== undefined) {
+      if (!Array.isArray(spouse)) spouse = [spouse];
+      for (var j = 0; j < spouse.length; j++) {
+        var wife = spouse[j];
         if (key === wife) {
           // or warn no reflexive marriages
           continue;
@@ -431,11 +431,11 @@ function setupMarriages(diagram) {
         }
       }
     }
-    var virs = data.vir;
-    if (virs !== undefined) {
-      if (typeof virs === "number") virs = [virs];
-      for (var j = 0; j < virs.length; j++) {
-        var husband = virs[j];
+    var spouse = data.spouse;
+    if (spouse !== undefined) {
+      if (!Array.isArray(spouse)) spouse = [spouse];
+      for (var j = 0; j < spouse.length; j++) {
+        var husband = spouse[j];
         if (key === husband) {
           // or warn no reflexive marriages
           continue;
